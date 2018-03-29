@@ -8,16 +8,15 @@ function setup() {
   vhs.loop();
 vhs.hide();
   cam = createCapture(VIDEO);
-  cam.size(960, 540);
   cam.hide();
 
    mic = new p5.AudioIn();
    mic.start();
    fft = new p5.FFT(0.5, 1024);
    fft.setInput(mic);
+w = width/64;
 
 
-   
 }
 
 function draw() {
@@ -28,18 +27,52 @@ pop();
 
 push();
 var spectrum = fft.analyze();
-
+translate(0,50);
+   beginShape();
+   for (i = 0; i<spectrum.length; i++) {
+    vertex(i, map(spectrum[i], 0, 255, height, 0) );
+   }
+   endShape();
 pop();
+
+
+push();
+var spectrum = fft.analyze();
+translate(500,50);
+   beginShape();
+   for (i = 0; i<spectrum.length; i++) {
+    vertex(i, map(spectrum[i], 0, 255, height, 0) );
+   }
+   endShape();
+pop();
+
 
 push();
 translate(windowWidth/2, windowHeight/2);
 rotate(angle);
 imageMode(CENTER);
-image(cam, 0, 0, 960/1.5, 540/1.5);
+image(cam, 0, 0, 960/2, 540/1.75);
 pop();
 
+//push();
+//translate(windowWidth/2, windowHeight/2);
+//ellipse(0, 0, 2, 2);
+//pop();
 
 
-angle -= 0.01;
 
+
+
+keyPressed();
+angle -= 0.07;
+
+}
+
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+    angle += 1;
+  } else if (keyCode === DOWN_ARROW) {
+    angle -= 0,01;
+  }
+  return false; // prevent default
 }
