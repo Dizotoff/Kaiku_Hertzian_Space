@@ -1,6 +1,7 @@
 var mic, fft, vhs, cam;
 let angle = 0;
-let c =0;
+let c =5;
+let speed =0;
 function setup() {
   createCanvas(windowWidth-c, windowHeight-c);
 
@@ -25,9 +26,10 @@ push();
 image(vhs, 0, 0, windowWidth-c, windowHeight-c);
 pop();
 
+//bottom left
 push();
 var spectrum = fft.analyze();
-translate(0,50);
+translate(0,0);
    beginShape();
    for (i = 0; i<spectrum.length; i++) {
     vertex(i, map(spectrum[i], 0, 255, height, 0) );
@@ -35,15 +37,45 @@ translate(0,50);
    endShape();
 pop();
 
-
+//bottom right
 push();
 var spectrum = fft.analyze();
-translate(500,50);
+translate(700,0);
    beginShape();
+
    for (i = 0; i<spectrum.length; i++) {
-    vertex(i, map(spectrum[i], 0, 255, height, 0) );
+    vertex(i, map(spectrum[spectrum.length-i], 0, 255, height, 0) );
    }
    endShape();
+pop();
+
+
+//right top
+push();
+var spectrum = fft.analyze();
+translate(700,-1000);
+
+   beginShape();
+
+   for (i = 0; i<spectrum.length; i++) {
+    vertex(i, map(-spectrum[spectrum.length-i], 0, 255, height, 0) );
+   }
+   endShape();
+
+pop();
+
+//left top
+push();
+var spectrum = fft.analyze();
+translate(-5,-1000);
+
+   beginShape();
+
+   for (i = 0; i<spectrum.length; i++) {
+    vertex(i, map(-spectrum[i], 0, 255, height, 0) );
+   }
+   endShape();
+
 pop();
 
 
@@ -51,7 +83,9 @@ push();
 translate(windowWidth/2, windowHeight/2);
 rotate(angle);
 imageMode(CENTER);
-image(cam, 0, 0, 960/2, 540/1.75);
+image(cam, 0, 0, 960/2*1.75, 540/1.75*1.75);
+
+
 pop();
 
 //push();
@@ -63,16 +97,24 @@ pop();
 
 
 
-keyPressed();
-angle -= 0.07;
 
+
+angle += speed ;
+speedcontrol();
 }
 
-function keyPressed() {
+function speedcontrol() {
   if (keyCode === UP_ARROW) {
-    angle += 1;
+    speed = speed+0.001;
   } else if (keyCode === DOWN_ARROW) {
-    angle -= 0,01;
+    speed = speed-0.001;
+  } else if (keyCode === 82) {
+    location.reload();
+  } else if (keyCode === CONTROL) {
+    console.log("OPA");
+  } else if (keyCode === 90) {
+    speed = -0.07;
   }
-  return false; // prevent default
+  return false;
+
 }

@@ -13,6 +13,9 @@ function setup() {
    mic.start();
    fft = new p5.FFT();
    fft.setInput(mic);
+
+
+
 }
 
 function draw() {
