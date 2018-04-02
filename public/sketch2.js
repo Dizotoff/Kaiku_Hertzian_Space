@@ -29,7 +29,7 @@ pop();
 //bottom left
 push();
 var spectrum = fft.analyze();
-translate(0,0);
+translate(-20,0);
    beginShape();
    for (i = 0; i<spectrum.length; i++) {
     vertex(i, map(spectrum[i], 0, 255, height, 0) );
@@ -39,8 +39,8 @@ pop();
 
 //bottom right
 push();
-var spectrum = fft.analyze();
-translate(700,0);
+
+translate(400,0);
    beginShape();
 
    for (i = 0; i<spectrum.length; i++) {
@@ -52,8 +52,8 @@ pop();
 
 //right top
 push();
-var spectrum = fft.analyze();
-translate(700,-1000);
+
+translate(400,-800);
 
    beginShape();
 
@@ -66,8 +66,8 @@ pop();
 
 //left top
 push();
-var spectrum = fft.analyze();
-translate(-5,-1000);
+
+translate(-0,-900);
 
    beginShape();
 
@@ -83,15 +83,15 @@ push();
 translate(windowWidth/2, windowHeight/2);
 rotate(angle);
 imageMode(CENTER);
-image(cam, 0, 0, 960/2*1.75, 540/1.75*1.75);
+image(cam, 0, 0, 960/2.5*1.75, 540/1.85*1.7);
 
 
 pop();
 
-//push();
-//translate(windowWidth/2, windowHeight/2);
-//ellipse(0, 0, 2, 2);
-//pop();
+push();
+translate(windowWidth/2, windowHeight/2);
+ellipse(0, 0, 2, 2);
+pop();
 
 
 
@@ -104,17 +104,29 @@ speedcontrol();
 }
 
 function speedcontrol() {
-  if (keyCode === UP_ARROW) {
+  if (keyCode === RIGHT_ARROW) {
     speed = speed+0.001;
-  } else if (keyCode === DOWN_ARROW) {
+  } else if (keyCode === LEFT_ARROW) {
     speed = speed-0.001;
   } else if (keyCode === 82) {
     location.reload();
   } else if (keyCode === CONTROL) {
     console.log("OPA");
+
   } else if (keyCode === 90) {
-    speed = -0.07;
+    speed = -0.075;
+  } else if (keyCode === 67) {
+    speed = -0.07*3;
+  } else if (keyCode === 86) {
+    speed = -0.07*10;
+  } else if (keyCode === 66) {
+    speed = 0.07;
+  } else if (keyCode === 78) {
+    speed = 0.07*10;
+  } else if (keyCode === 88) {
+    speed = 0;
   }
+
   return false;
 
 }
