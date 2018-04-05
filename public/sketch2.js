@@ -2,9 +2,11 @@ var mic, fft, vhs, cam;
 let angle = 0;
 let c =5;
 let speed =0;
+let autocontrol = false;
+let rotateCtr = true;
 function setup() {
   createCanvas(windowWidth-c, windowHeight-c);
-
+  smiley = loadImage("spiral.jpg");
   vhs= createVideo(["vhs.mp4"]);
   vhs.loop();
 vhs.hide();
@@ -29,7 +31,7 @@ pop();
 //bottom left
 push();
 var spectrum = fft.analyze();
-translate(-20,0);
+translate(-10,0);
    beginShape();
    for (i = 0; i<spectrum.length; i++) {
     vertex(i, map(spectrum[i], 0, 255, height, 0) );
@@ -40,7 +42,7 @@ pop();
 //bottom right
 push();
 
-translate(400,0);
+translate(500,0);
    beginShape();
 
    for (i = 0; i<spectrum.length; i++) {
@@ -53,7 +55,7 @@ pop();
 //right top
 push();
 
-translate(400,-800);
+translate(500,-850);
 
    beginShape();
 
@@ -83,7 +85,7 @@ push();
 translate(windowWidth/2, windowHeight/2);
 rotate(angle);
 imageMode(CENTER);
-image(cam, 0, 0, 960/2.5*1.75, 540/1.85*1.7);
+image(smiley, 0, 0, 960/2.5*1.75, 540/1.85*1.7);
 
 
 pop();
@@ -93,7 +95,25 @@ translate(windowWidth/2, windowHeight/2);
 ellipse(0, 0, 2, 2);
 pop();
 
+if (autocontrol == true) {
+console.log("TRUEE AUTOCONTROL");
 
+  speed = speed + 0.0015;
+
+  if (speed > 2) {
+  rotateCtr = false
+  }
+
+  if (rotateCtr == false) {
+    speed = speed - 0.002;
+  }
+
+  if (speed < 0) {
+    rotateCtr=true;
+  }
+} else {
+  console.log("Autocontrol false ");
+}
 
 
 
@@ -101,6 +121,7 @@ pop();
 
 angle += speed ;
 speedcontrol();
+console.log(speed);
 }
 
 function speedcontrol() {
@@ -111,7 +132,7 @@ function speedcontrol() {
   } else if (keyCode === 82) {
     location.reload();
   } else if (keyCode === CONTROL) {
-    console.log("OPA");
+
 
   } else if (keyCode === 90) {
     speed = -0.075;
@@ -125,7 +146,12 @@ function speedcontrol() {
     speed = 0.07*10;
   } else if (keyCode === 88) {
     speed = 0;
+  } else if (keyCode === 65) {
+    autocontrol = true;
+  } else if (keyCode === 81) {
+    autocontrol = false;
   }
+
 
   return false;
 
