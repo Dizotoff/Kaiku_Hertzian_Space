@@ -133,9 +133,9 @@ function speedcontrol() {
   } else if (keyCode === 82) {
     location.reload();
   } else if (keyCode === UP_ARROW) {
-    r = r+0.01;
+    r = r+0.05;
   } else if (keyCode === DOWN_ARROW) {
-    r = r-0.01;
+    r = r-0.05;
   } else if (keyCode === CONTROL) {
 
 
@@ -167,11 +167,37 @@ function speedcontrol() {
   } else if (keyCode === 52) {
     smiley = loadImage("spiral3.jpg");
   } else if (keyCode === 53) {
-    smiley = loadImage("spiral4.jpg");
+    smiley = loadImage("Mushrooms.jpg");
   } else if (keyCode === 54) {
-    smiley = loadImage("spiral5.png");
+    smiley = loadImage("Mushrooms2.png");
   } else if (keyCode === 55) {
-    smiley = loadImage("spiral6.png");
+    smiley = loadImage("Mushrooms3.jpg");
+  } else if (keyCode === 56) {
+    smiley = loadImage("Mushrooms4.png");
+  } else if (keyCode === 57) {
+    smiley = loadImage("Mushrooms5.gif");
+  }else if (keyCode === 87) {
+    smiley = loadImage("Mushrooms6.gif");
+  }else if (keyCode === 69) {
+    smiley = loadImage("Mushrooms7.gif");
+  }else if (keyCode === 84) {
+    smiley = loadImage("Mushrooms8.gif");
+  }else if (keyCode === 89) {
+    smiley = loadImage("Mushrooms9.gif");
+  }else if (keyCode === 85) {
+    smiley = loadImage("Mushrooms10.jpg");
+  }else if (keyCode === 73) {
+    smiley = loadImage("Mushrooms11.jpg");
+  }else if (keyCode === 79) {
+    smiley = loadImage("Mushrooms12.jpg");
+  }else if (keyCode === 80) {
+    smiley = loadImage("Mushrooms13.jpg");
+  }else if (keyCode === 219) {
+    smiley = loadImage("Mushrooms14.jpg");
+  }else if (keyCode === 221) {
+    smiley = loadImage("Mushrooms15.jpg");
+  }else if (keyCode === 220) {
+    smiley = loadImage("Mushrooms16.jpg");
   }
 
 
