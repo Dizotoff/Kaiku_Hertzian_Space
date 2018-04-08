@@ -93,7 +93,7 @@ pop();
 
 push();
 translate(windowWidth/2, windowHeight/2);
-ellipse(0, 0, 2, 2);
+ellipse(0, 0, 1, 1);
 pop();
 
 if (autocontrol == true) {
