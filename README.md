@@ -4,7 +4,7 @@ Visuals created for Hertzian Space event in Helsinki, Finland as a part of exper
 
 ## Online link 
 
-These [LINK](https://secure-atoll-60330.herokuapp.com/)  will get you a  working copy without any installation accessible through Google Chrome (others browsers haven't been tested). Also copy of the project up and running on your local machine for development and testing purposes is avaliable using this Github repository and  Nodejs running server.js file.  
+These [LINK](https://secure-atoll-60330.herokuapp.com/)  will get you a  working copy without any installation accessible through Google Chrome (others browsers haven't been tested). You need to give access to your mic and camera in order to analyse the sound and for creation visuals by using your videostream from the cam. The sound and videostream aren't used for any other purposes.  Also copy of the project up and running on your local machine for development and testing purposes is avaliable using this Github repository and  Nodejs running server.js file.  
 
 
 
