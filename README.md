@@ -37,5 +37,5 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-* Big thanks to  [Laura Mrls](https://soundcloud.com/laura-mrls-1) for the inspritation and [Daniel Shiffman](https://github.com/shiffman) for the amazing coding challenges. 
+* Big thanks to  [Laura Mrls](https://soundcloud.com/laura-mrls-1) and [Music Tech Fest](http://musictechfest.net/) for the inspritation and [Daniel Shiffman](https://github.com/shiffman) for the amazing coding challenges. 
 
