@@ -10,6 +10,8 @@ These [LINK](https://secure-atoll-60330.herokuapp.com/)  will get you a  working
 
 ### Controllers
 
+Dont forget to go into fullscreen mode and reload the page! 
+
 * Keys 1 to 0 change visual patterns in the middle of the screen ( Key 0 is a webcam)
 * Key - (minus, next key to the right after 0 ) removes pattern from the screen
 * Left and Right arrows continiusly increase acceleration of rotation of the pattern
@@ -18,7 +20,7 @@ These [LINK](https://secure-atoll-60330.herokuapp.com/)  will get you a  working
 * A - turn on autopilot (control only speed of rotation)
 * Q - turn off autopilot 
 * X - stop rotation in manual mod
-
+* R - reload the page
 
 Depth of the microphone based visuals can be controlled by increasing or decreasing sensitivity of mic using standard Windows or IOS  recording device control panel.
 
