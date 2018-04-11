@@ -8,7 +8,7 @@ var r = 1;
 function setup() {
   createCanvas(windowWidth-c, windowHeight-c);
   smiley = loadImage("spiralBlknWht.jpg");
-  vhs= createVideo(["vhs.mp4"]);
+  vhs= createVideo(["vhs1.mp4"]);
   vhs.loop();
 vhs.hide();
 cam = createCapture(VIDEO);
@@ -86,18 +86,18 @@ push();
 translate(windowWidth/2, windowHeight/2);
 rotate(angle);
 imageMode(CENTER);
-image(smiley, 0, 0, 960/2.5*1.75*r, 540/1.85*1.7*r);
+image(smiley, 0, 0, 991*r, 382*r);
 
 
 pop();
 
 push();
 translate(windowWidth/2, windowHeight/2);
-ellipse(0, 0, 1, 1);
+ellipse(0, 0, 1 , 1);
 pop();
 
 if (autocontrol == true) {
-console.log("TRUEE AUTOCONTROL");
+console.log("TRU EE AUTOCONTROL");
 
   speed = speed + 0.001;
 
@@ -178,6 +178,8 @@ function speedcontrol() {
     smiley = loadImage("Mushrooms13.jpg");
   }else if (keyCode === 189) {
     smiley = loadImage("spiral7.jpg");
+  }else if (keyCode === 68) {
+    smiley = loadImage("smiley2.jpg");
   }
 
 
