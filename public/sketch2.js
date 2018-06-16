@@ -1,19 +1,19 @@
 var mic, fft, vhs, cam;
 let angle = 0;
 let c =4;
-let speed =0;
+let speed =0.25;
 let autocontrol = false;
 let rotateCtr = true;
 var r = 1;
 function setup() {
   createCanvas(windowWidth-c, windowHeight-c);
-  smiley = loadImage("spiralBlknWht.jpg");
-  vhs= createVideo(["vhs1.mp4"]);
+  smiley = loadImage("pics/pic1.jpg");
+  vhs= createVideo(["vids/vhs.mp4"]);
   vhs.loop();
 vhs.hide();
 cam = createCapture(VIDEO);
 cam.hide();
-
+autocontrol = true
    mic = new p5.AudioIn();
    mic.start();
    fft = new p5.FFT(0.5, 1024);
@@ -91,25 +91,23 @@ image(smiley, 0, 0, 991*r, 382*r);
 
 pop();
 
-push();
-translate(windowWidth/2, windowHeight/2);
-ellipse(0, 0, 1 , 1);
-pop();
+
 
 if (autocontrol == true) {
 console.log("TRU EE AUTOCONTROL");
 
   speed = speed + 0.001;
 
-  if (speed > 4) {
+  if (speed > 3) {
   rotateCtr = false
   }
 
   if (rotateCtr == false) {
     speed = speed - 0.002;
+    
   }
 
-  if (speed < 0.3) {
+  if (speed < 1) {
     rotateCtr=true;
   }
 } else {
@@ -156,30 +154,30 @@ function speedcontrol() {
   } else if (keyCode === 81) {
     autocontrol = false;
   } else if (keyCode === 49) {
-    smiley = loadImage("spiralBlknWht.jpg");
+    smiley = loadImage("pics/pic1.jpg");
   } else if (keyCode === 50) {
-    smiley = loadImage("spiral.jpg");
+    smiley = loadImage("pics/pic2.jpg");
   } else if (keyCode === 48) {
     smiley = createCapture(VIDEO);
     smiley.hide();
   } else if (keyCode === 51) {
-    smiley = loadImage("Mushrooms4.png");
+    smiley = loadImage("pics/pic3.png");
   } else if (keyCode === 52) {
-    smiley = loadImage("spiral3.jpg");
+    smiley = loadImage("pics/pic4.jpg");
   } else if (keyCode === 53) {
-    smiley = loadImage("spiral4.jpg");
+    smiley = loadImage("pics/pic5.jpg");
   } else if (keyCode === 54) {
-    smiley = loadImage("Mushrooms8.gif");
+    smiley = loadImage("pics/pic6.gif");
   } else if (keyCode === 55) {
-    smiley = loadImage("Mushrooms11.jpg");
+    smiley = loadImage("pics/pic7.jpg");
   } else if (keyCode === 56) {
-    smiley = loadImage("Mushrooms12.jpg");
+    smiley = loadImage("pics/pic8.jpg");
   } else if (keyCode === 57) {
-    smiley = loadImage("Mushrooms13.jpg");
+    smiley = loadImage("pics/pic9.jpg");
   }else if (keyCode === 189) {
-    smiley = loadImage("spiral7.jpg");
+    smiley = loadImage("pics/pic10.jpg");
   }else if (keyCode === 68) {
-    smiley = loadImage("smiley2.jpg");
+    smiley = loadImage("pics/pic11.jpg");
   }
 
 
