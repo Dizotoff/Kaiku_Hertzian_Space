@@ -11,8 +11,7 @@ function setup() {
   vhs= createVideo(["vids/vhs.mp4"]);
   vhs.loop();
 vhs.hide();
-cam = createCapture(VIDEO);
-cam.hide();
+
 autocontrol = true
    mic = new p5.AudioIn();
    mic.start();
@@ -104,7 +103,7 @@ console.log("TRU EE AUTOCONTROL");
 
   if (rotateCtr == false) {
     speed = speed - 0.002;
-    
+
   }
 
   if (speed < 1) {
@@ -157,9 +156,6 @@ function speedcontrol() {
     smiley = loadImage("pics/pic1.jpg");
   } else if (keyCode === 50) {
     smiley = loadImage("pics/pic2.jpg");
-  } else if (keyCode === 48) {
-    smiley = createCapture(VIDEO);
-    smiley.hide();
   } else if (keyCode === 51) {
     smiley = loadImage("pics/pic3.png");
   } else if (keyCode === 52) {
