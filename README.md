@@ -1,6 +1,6 @@
-# Accesible sound based visuals in the browser
+# Accesible sound based visuals in the browser [DEMO]
 
-Audio based visuals created for Hertzian Space event in Helsinki, Finland as a part of experimental project. Visuals consist of the  computer microphone sound visual representation, number of simple geometrial patterns  which creates illusion of movement when rotation happening. User allowed to change the type, size and rotation speed of patterns as well as depth of live sound analysis.    
+Audio based visuals created for Hertzian Space event in Helsinki, Finland as a part of experimental project. Visuals consist of the  computer's microphone input visual representation and number of simple geometrial patterns  which creates illusion of movement when rotation happening. User allowed to change the type, size and rotation speed of patterns as well as depth of live sound analysis.    
 
 ## Online link 
 
