@@ -121,7 +121,7 @@ angle += speed ;
 speedcontrol();
 console.log(speed);
 }
-
+//just for testing purposes
 function speedcontrol() {
   if (keyCode === RIGHT_ARROW) {
     speed = speed+0.001;
