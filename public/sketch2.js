@@ -1,6 +1,6 @@
 var mic, fft, vhs, cam;
 let angle = 0;
-let c =4;
+let c = 4;
 let speed =0.25;
 let autocontrol = false;
 let rotateCtr = true;
@@ -12,7 +12,7 @@ function setup() {
   vhs.loop();
 vhs.hide();
 
-autocontrol = true
+autocontrol = false;
    mic = new p5.AudioIn();
    mic.start();
    fft = new p5.FFT(0.5, 1024);
@@ -121,21 +121,74 @@ angle += speed ;
 speedcontrol();
 console.log(speed);
 }
-//just for testing purposes
+
 function speedcontrol() {
-  if (keyCode === RIGHT_ARROW) {
-    speed = speed+0.001;
-  } else if (keyCode === LEFT_ARROW) {
-    speed = speed-0.001;
-  } else if (keyCode === 82) {
-    location.reload();
-  } else if (keyCode === UP_ARROW) {
-    r = r+0.05;
-  } else if (keyCode === DOWN_ARROW) {
-    r = r-0.05;
-  } else if (keyCode === CONTROL) {
+  switch (keyCode) {
+    case RIGHT_ARROW:
+      speed = speed+0.01;
+      break;
+    case LEFT_ARROW:
+        speed = speed-0.01;
+        break;
+    case 65:
+        autocontrol = true;
+        break;
+    case 81:
+        autocontrol = false;
+        break;
+    case 81:
+        autocontrol = false;
+        break;
+    case 82:
+        location.reload();
+        break;
+    case UP_ARROW:
+        r=r+0.2;
+        break;
+    case DOWN_ARROW:
+        r=r-0.2;
+        break;
+    case 49:
+        smiley = loadImage("pics/pic1.jpg");
+        break;
+    case 50:
+        smiley = loadImage("pics/pic2.jpg");
+        break;
+    case 51:
+        smiley = loadImage("pics/pic3.jpg");
+        break;
+    case 52:
+        smiley = loadImage("pics/pic4.jpg");
+        break;
+    case 53:
+        smiley = loadImage("pics/pic5.jpg");
+        break;
+    case 54:
+        smiley = loadImage("pics/pic6.gif");
+        break;
+    case 55:
+        smiley = loadImage("pics/pic7.jpg");
+        break;
+    case 56:
+        smiley = loadImage("pics/pic8.jpg");
+        break;
+    case 57:
+        smiley = loadImage("pics/pic9.jpg");
+        break;
+    case 189:
+        smiley = loadImage("pics/pic10.jpg");
+        break;
+    case 68:
+        smiley = loadImage("pics/pic11.jpg");
+        break;
+    default:
+
+  }
+  return false
+}
 
 
+/*
   } else if (keyCode === 90) {
     speed = -0.075;
   } else if (keyCode === 67) {
@@ -148,39 +201,4 @@ function speedcontrol() {
     speed = 0.07*10;
   } else if (keyCode === 88) {
     speed = 0;
-  } else if (keyCode === 65) {
-    autocontrol = true;
-  } else if (keyCode === 81) {
-    autocontrol = false;
-  } else if (keyCode === 49) {
-    smiley = loadImage("pics/pic1.jpg");
-  } else if (keyCode === 50) {
-    smiley = loadImage("pics/pic2.jpg");
-  } else if (keyCode === 51) {
-    smiley = loadImage("pics/pic3.png");
-  } else if (keyCode === 52) {
-    smiley = loadImage("pics/pic4.jpg");
-  } else if (keyCode === 53) {
-    smiley = loadImage("pics/pic5.jpg");
-  } else if (keyCode === 54) {
-    smiley = loadImage("pics/pic6.gif");
-  } else if (keyCode === 55) {
-    smiley = loadImage("pics/pic7.jpg");
-  } else if (keyCode === 56) {
-    smiley = loadImage("pics/pic8.jpg");
-  } else if (keyCode === 57) {
-    smiley = loadImage("pics/pic9.jpg");
-  }else if (keyCode === 189) {
-    smiley = loadImage("pics/pic10.jpg");
-  }else if (keyCode === 68) {
-    smiley = loadImage("pics/pic11.jpg");
-  }
-
-
-
-
-
-
-  return false;
-
-}
+*/
